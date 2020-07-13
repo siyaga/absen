@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
-    tools:context=".LoginActivity">
+    tools:context=".login.LoginActivity">
     <LinearLayout
 
         android:orientation="vertical"
@@ -32,9 +32,9 @@
          android:layout_height="wrap_content"
          />
      <EditText
-         android:id="@+id/edt_username_login"
-         android:hint="Username Anda"
-         android:inputType="text"
+         android:id="@+id/edt_email_login"
+         android:hint="Email Anda"
+         android:inputType="textEmailAddress"
          android:textColorHint="@color/colorAccent"
          android:textColor="@color/colorPrimary"
          android:textStyle="bold"
@@ -101,7 +101,16 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             />
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="center|bottom"
+            android:visibility="gone"
 
+        />
 
     </LinearLayout>
 

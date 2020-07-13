@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.ananda.absen.LoginActivity;
+import com.ananda.absen.login.LoginActivity;
 import com.ananda.absen.MainActivity;
 import com.ananda.absen.R;
 
