@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".menu.KehadiranActivity"></activity>
+        <activity android:name=".menu.TentangActivity"></activity>
+        <activity android:name=".menu.KehadiranActivity" />
         <activity android:name=".menu.MasukActivity" />
         <activity android:name=".menu.PulangActivity" />
         <activity android:name=".ProfilActivity" />
@@ -20,9 +21,9 @@
         <activity android:name=".intro.Pengenalan1Activity" />
         <activity android:name=".login.LupaPasswordActivity" />
         <activity android:name=".login.RegisterActivity" />
-        <activity android:name=".intro.SplashScreen" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".login.LoginActivity">
+        <activity android:name=".login.LoginActivity"/>
+            <activity android:name=".intro.SplashScreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

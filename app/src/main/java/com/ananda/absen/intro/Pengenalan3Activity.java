@@ -22,7 +22,7 @@ public class Pengenalan3Activity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Pengenalan3Activity.this, LoginActivity.class);
                 startActivity(intent);
-
+                finish();
 
             }
         });

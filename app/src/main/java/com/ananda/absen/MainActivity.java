@@ -7,8 +7,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.ananda.absen.login.LoginActivity;
+import com.ananda.absen.menu.KehadiranActivity;
+import com.ananda.absen.menu.MasukActivity;
+import com.ananda.absen.menu.PulangActivity;
+import com.ananda.absen.menu.TentangActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -16,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener authStateListener;
     private FirebaseAuth auth;
     private ImageView ivLogout;
+    private LinearLayout linearMasuk, linearPulang, linearKehadiran, linearTentang;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +30,41 @@ public class MainActivity extends AppCompatActivity {
 
         ivLogout = findViewById(R.id.iv_logout);
         auth = FirebaseAuth.getInstance();
+
+        linearMasuk = findViewById(R.id.linear_masuk);
+        linearPulang = findViewById(R.id.linear_pulang);
+        linearKehadiran = findViewById(R.id.linear_kehadiran);
+        linearTentang = findViewById(R.id.linear_tentang);
+
+        linearMasuk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MasukActivity.class);
+                startActivity(intent);
+            }
+        });
+        linearPulang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, PulangActivity.class);
+                startActivity(intent);
+            }
+        });
+        linearKehadiran.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, KehadiranActivity.class);
+                startActivity(intent);
+            }
+        });
+        linearTentang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, TentangActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         authStateListener = new FirebaseAuth.AuthStateListener() {

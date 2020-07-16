@@ -17,6 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
+            android:src="@drawable/ic_baseline_calendar_today_24"
             android:layout_gravity="center"
             android:layout_width="150dp"
             android:layout_height="150dp"
@@ -29,7 +30,7 @@
             android:layout_width="wrap_content"
             android:textSize="16dp"
             android:layout_height="match_parent"
-            android:text="@string/deskripsi_pengenalan_1"
+            android:text="@string/deskripsi_pengenalan_3"
 
             />
 
