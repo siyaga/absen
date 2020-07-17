@@ -15,7 +15,6 @@
         <activity android:name=".menu.KehadiranActivity" />
         <activity android:name=".menu.MasukActivity" />
         <activity android:name=".menu.PulangActivity" />
-        <activity android:name=".ProfilActivity" />
         <activity android:name=".intro.Pengenalan3Activity" />
         <activity android:name=".intro.Pengenalan2Activity" />
         <activity android:name=".intro.Pengenalan1Activity" />
