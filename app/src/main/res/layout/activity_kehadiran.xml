@@ -49,50 +49,50 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="Tanggal"
-                    android:textSize="16dp"
+                    android:textSize="14dp"
                     android:layout_column="1"
                     android:textStyle="bold"
                     android:textColor="@color/colorPrimary"
                     />
                 <TextView
-                    android:layout_marginLeft="16dp"
+                    android:layout_marginLeft="55dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="Jam \nMasuk"
                     android:gravity="center"
-                    android:textSize="16dp"
+                    android:textSize="14dp"
                     android:layout_column="1"
                     android:textStyle="bold"
                     android:textColor="@color/colorPrimary"
                     />
                 <TextView
-                    android:layout_marginLeft="16dp"
+                    android:layout_marginLeft="24dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="Jam \npulang"
                     android:gravity="center"
-                    android:textSize="16dp"
+                    android:textSize="14dp"
                     android:layout_column="1"
                     android:textStyle="bold"
                     android:textColor="@color/colorPrimary"
                     />
                 <TextView
-                    android:layout_marginLeft="16dp"
+                    android:layout_marginLeft="24dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="Total \nJam"
                     android:gravity="center"
-                    android:textSize="16dp"
+                    android:textSize="14dp"
                     android:layout_column="1"
                     android:textStyle="bold"
                     android:textColor="@color/colorPrimary"
                     />
                 <TextView
-                    android:layout_marginLeft="16dp"
+                    android:layout_marginLeft="8dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="Keterangan"
-                    android:textSize="16dp"
+                    android:textSize="14dp"
                     android:layout_column="1"
                     android:textStyle="bold"
                     android:textColor="@color/colorPrimary"
@@ -102,6 +102,12 @@
 
 
         </TableLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvkehadiran"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/item_tabel"
+            />
 
 
 
