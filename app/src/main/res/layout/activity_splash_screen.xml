@@ -8,6 +8,7 @@
     tools:context=".intro.SplashScreen">
 
     <ImageView
+        android:src="@drawable/logoab"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_centerVertical="true"

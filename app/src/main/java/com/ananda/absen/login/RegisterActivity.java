@@ -19,7 +19,13 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+/*
+Deskripsi Pengerjaan    : Membuat Membuat Activity Registrasi
+NIM                     : Ananda Marwanaya Putra
+Nama                    : 10117157
+Kelas                   : IF-4
 
+ */
 public class RegisterActivity extends AppCompatActivity {
     private Button btnRegister;
     private EditText edtEmail,edtPassword;

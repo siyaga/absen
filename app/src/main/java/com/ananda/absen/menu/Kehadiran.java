@@ -1,43 +1,49 @@
 package com.ananda.absen.menu;
 
 import java.util.Date;
+/*
+Deskripsi Pengerjaan    : Membuat class Kehadiran
+NIM                     : Ananda Marwanaya Putra
+Nama                    : 10117157
+Kelas                   : IF-4
 
+ */
 class Kehadiran {
-    public Date tanggalKehadiran;
-    public Date jamMasuk;
-    public Date jamPulang;
-    public int jamTotal;
+    public String tanggalKehadiran;
+    public String jamMasuk;
+    public String jamPulang;
+    public String jamTotal;
     public String KeteranganKehadiran;
 
-    public Date getTanggalKehadiran() {
+    public String getTanggalKehadiran() {
         return tanggalKehadiran;
     }
 
-    public void setTanggalKehadiran(Date tanggalKehadiran) {
+    public void setTanggalKehadiran(String tanggalKehadiran) {
         this.tanggalKehadiran = tanggalKehadiran;
     }
 
-    public Date getJamMasuk() {
+    public String getJamMasuk() {
         return jamMasuk;
     }
 
-    public void setJamMasuk(Date jamMasuk) {
+    public void setJamMasuk(String jamMasuk) {
         this.jamMasuk = jamMasuk;
     }
 
-    public Date getJamPulang() {
+    public String getJamPulang() {
         return jamPulang;
     }
 
-    public void setJamPulang(Date jamPulang) {
+    public void setJamPulang(String jamPulang) {
         this.jamPulang = jamPulang;
     }
 
-    public int getJamTotal() {
+    public String getJamTotal() {
         return jamTotal;
     }
 
-    public void setJamTotal(int jamTotal) {
+    public void setJamTotal(String jamTotal) {
         this.jamTotal = jamTotal;
     }
 

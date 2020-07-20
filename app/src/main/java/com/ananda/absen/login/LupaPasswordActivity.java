@@ -16,7 +16,13 @@ import com.ananda.absen.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+/*
+Deskripsi Pengerjaan    : Membuat Membuat Activity Lupa Password
+NIM                     : Ananda Marwanaya Putra
+Nama                    : 10117157
+Kelas                   : IF-4
 
+ */
 public class LupaPasswordActivity extends AppCompatActivity {
     private EditText edtEmail;
     private Button btnKirim;

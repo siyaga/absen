@@ -14,6 +14,13 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
+/*
+Deskripsi Pengerjaan    : Membuat Adapter untuk RecucleVIewnya
+NIM                     : Ananda Marwanaya Putra
+Nama                    : 10117157
+Kelas                   : IF-4
+
+ */
 public class KehadiranAdapter extends RecyclerView.Adapter<KehadiranAdapter.ListViewHolder> {
 
     private ArrayList<Kehadiran> listKehadiran;
@@ -33,11 +40,11 @@ public class KehadiranAdapter extends RecyclerView.Adapter<KehadiranAdapter.List
     public void onBindViewHolder(@NonNull final ListViewHolder holder, int position) {
             Kehadiran kehadiran = listKehadiran.get(position);
 
-      /*      holder.tanggalKehadiran.setText(kehadiran.getTanggalKehadiran());
+            holder.tanggalKehadiran.setText(kehadiran.getTanggalKehadiran());
             holder.jamMasuk.setText(kehadiran.getJamMasuk());
             holder.jamPulang.setText(kehadiran.getJamPulang());
             holder.jamTotal.setText(kehadiran.getJamTotal());
-         */   holder.keteranganKehadiran.setText(kehadiran.getKeteranganKehadiran());
+            holder.keteranganKehadiran.setText(kehadiran.getKeteranganKehadiran());
     }
 
     @Override

@@ -58,10 +58,46 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/linear_kehadiran"
+                android:id="@+id/linear_pulang"
                 android:layout_margin="24dp"
                 android:padding="20dp"
                 android:layout_alignParentRight="true"
+                android:background="@drawable/background_menu"
+                android:orientation="vertical"
+                android:layout_width="160dp"
+                android:layout_height="125dp">
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:text="Absen Pulang"
+                    />
+                <ImageView
+
+                    android:layout_marginTop="8dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_baseline_work_outline_24"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"/>
+
+
+            </LinearLayout>
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:id="@+id/linear_kehadiran"
+                android:layout_margin="24dp"
+                android:padding="20dp"
+                android:layout_alignParentLeft="true"
                 android:background="@drawable/background_menu"
                 android:orientation="vertical"
                 android:layout_width="160dp"
@@ -85,17 +121,6 @@
 
 
             </LinearLayout>
-
-
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
 
             <LinearLayout
                 android:id="@+id/linear_tentang"

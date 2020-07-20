@@ -9,7 +9,13 @@ import android.widget.Button;
 
 import com.ananda.absen.login.LoginActivity;
 import com.ananda.absen.R;
+/*
+Deskripsi Pengerjaan    : Membuat Membuat Activity Pengenalan Aplikasi 3
+NIM                     : Ananda Marwanaya Putra
+Nama                    : 10117157
+Kelas                   : IF-4
 
+ */
 public class Pengenalan3Activity extends AppCompatActivity {
     Button btnLanjut;
     @Override

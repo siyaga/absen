@@ -16,12 +16,18 @@ import com.ananda.absen.menu.PulangActivity;
 import com.ananda.absen.menu.TentangActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+/*
+Deskripsi Pengerjaan    : Membuat Main Activity Sebagai Menu
+NIM                     : Ananda Marwanaya Putra
+Nama                    : 10117157
+Kelas                   : IF-4
 
+ */
 public class MainActivity extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener authStateListener;
     private FirebaseAuth auth;
     private ImageView ivLogout;
-    private LinearLayout linearMasuk,  linearKehadiran, linearTentang;
+    private LinearLayout linearMasuk, linearPulang, linearKehadiran, linearTentang;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
 
         linearMasuk = findViewById(R.id.linear_masuk);
+        linearPulang = findViewById(R.id.linear_pulang);
         linearKehadiran = findViewById(R.id.linear_kehadiran);
         linearTentang = findViewById(R.id.linear_tentang);
 
@@ -39,6 +46,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, MasukActivity.class);
+                startActivity(intent);
+            }
+        });
+        linearPulang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, PulangActivity.class);
                 startActivity(intent);
             }
         });

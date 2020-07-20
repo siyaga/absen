@@ -7,7 +7,13 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.ananda.absen.R;
+/*
+Deskripsi Pengerjaan    : Membuat Membuat Activity Tentang Aplikasi
+NIM                     : Ananda Marwanaya Putra
+Nama                    : 10117157
+Kelas                   : IF-4
 
+ */
 public class TentangActivity extends AppCompatActivity {
     private ImageView ivBack;
     @Override

@@ -7,7 +7,13 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.ananda.absen.R;
+/*
+Deskripsi Pengerjaan    : Membuat Membuat Activity SplashScreen
+NIM                     : Ananda Marwanaya Putra
+Nama                    : 10117157
+Kelas                   : IF-4
 
+ */
 public class SplashScreen extends AppCompatActivity {
     private int time_loading = 4000;
     @Override
