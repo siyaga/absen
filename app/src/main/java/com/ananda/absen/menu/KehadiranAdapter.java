@@ -32,11 +32,12 @@ public class KehadiranAdapter extends RecyclerView.Adapter<KehadiranAdapter.List
     @Override
     public void onBindViewHolder(@NonNull final ListViewHolder holder, int position) {
             Kehadiran kehadiran = listKehadiran.get(position);
-            holder.tanggalKehadiran.setText(kehadiran.getTanggalKehadiran());
+
+      /*      holder.tanggalKehadiran.setText(kehadiran.getTanggalKehadiran());
             holder.jamMasuk.setText(kehadiran.getJamMasuk());
             holder.jamPulang.setText(kehadiran.getJamPulang());
             holder.jamTotal.setText(kehadiran.getJamTotal());
-            holder.keteranganKehadiran.setText(kehadiran.getKeteranganKehadiran());
+         */   holder.keteranganKehadiran.setText(kehadiran.getKeteranganKehadiran());
     }
 
     @Override

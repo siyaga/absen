@@ -18,7 +18,8 @@ public class KehadiranActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kehadiran);
         ivBack = findViewById(R.id.iv_back);
-        rvKehadiran = findViewById(R.id.)
+        rvKehadiran = findViewById(R.id.rvkehadiran);
+        rvKehadiran.setHasFixedSize(true);
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

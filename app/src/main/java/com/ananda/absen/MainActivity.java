@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener authStateListener;
     private FirebaseAuth auth;
     private ImageView ivLogout;
-    private LinearLayout linearMasuk, linearPulang, linearKehadiran, linearTentang;
+    private LinearLayout linearMasuk,  linearKehadiran, linearTentang;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
 
         linearMasuk = findViewById(R.id.linear_masuk);
-        linearPulang = findViewById(R.id.linear_pulang);
         linearKehadiran = findViewById(R.id.linear_kehadiran);
         linearTentang = findViewById(R.id.linear_tentang);
 
@@ -40,13 +39,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, MasukActivity.class);
-                startActivity(intent);
-            }
-        });
-        linearPulang.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, PulangActivity.class);
                 startActivity(intent);
             }
         });
@@ -92,6 +84,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
 
     @Override
