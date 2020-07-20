@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:orientation="vertical"
+    tools:context=".menu.PulangActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/iv_back"
+                    android:src="@drawable/ic_arrow_back_24dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    />
+                <TextView
+                    android:layout_marginLeft="30dp"
+                    android:text="Absen Pulang"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    android:textSize="32dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_marginTop="24dp"
+                android:text="Tanggal Pulang"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <EditText
+                android:id="@+id/edt_tanggal_pulang"
+                android:inputType="date"
+                android:textColorHint="@color/colorAccent"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Hari"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/edt_hari_pulang"
+                android:inputType="date"
+                android:textColorHint="@color/colorAccent"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Jam Pulang"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Contoh Penulisan 23:20 Harus Menggunakan ':'*"
+                android:textColor="@android:color/black"
+                android:textSize="10dp"
+                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/edt_jam_pulang"
+                android:inputType="datetime"
+                android:textColorHint="@color/colorAccent"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Jam Total"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Mohon Untuk Mengisi Dahulu Jam pulang dan tekan tombol hitung*"
+                android:textColor="@android:color/black"
+                android:textSize="10dp"
+                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/edt_jam_total"
+                android:inputType="datetime"
+                android:textColorHint="@color/colorAccent"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Keterangan"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+            <Spinner
+                android:id="@+id/spinner"
+                android:padding="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/spinner"
+                android:entries="@array/keterangan"
+                />
+                <Button
+                android:id="@+id/btn_isi_pulang"
+                android:layout_marginTop="48dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hitung Total Jam"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:background="@drawable/button_1"
+
+                />
+
+            <Button
+                android:id="@+id/btn_absen_pulang"
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lihat Kehadiran"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:background="@drawable/button_1"
+
+                />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center|bottom"
+                android:visibility="gone"
+
+                />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "267488679781",
+    "firebase_url": "https://absenproject-fa6aa.firebaseio.com",
+    "project_id": "absenproject-fa6aa",
+    "storage_bucket": "absenproject-fa6aa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:267488679781:android:b8d64eee39a17f17c6738c",
+        "android_client_info": {
+          "package_name": "com.ananda.absen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "267488679781-9l7ndphitksvk8aatnnfmul73edeov77.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ananda.absen",
+            "certificate_hash": "1bc036cad804ec3887d1d594fde3181eca15e74b"
+          }
+        },
+        {
+          "client_id": "267488679781-oo3i57hfra9mqfiq2q8s1gk6hl1rjv9l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEqZecfKN2mBsLqgonT505TFUBMlcl0CM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "267488679781-oo3i57hfra9mqfiq2q8s1gk6hl1rjv9l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
