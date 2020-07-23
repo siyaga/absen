@@ -9,49 +9,46 @@ Kelas                   : IF-4
 
  */
 class Kehadiran {
+    public String email;
     public String tanggalKehadiran;
     public String jamMasuk;
     public String jamPulang;
     public String jamTotal;
     public String KeteranganKehadiran;
 
-    public String getTanggalKehadiran() {
-        return tanggalKehadiran;
+    public Kehadiran(){
+
+    }
+    public Kehadiran(String email, String tanggalKehadiran, String jamMasuk, String jamPulang, String jamTotal, String keteranganKehadiran){
+    this.email = email;
+    this.tanggalKehadiran = tanggalKehadiran;
+    this.jamMasuk = jamMasuk;
+    this.jamPulang = jamPulang;
+    this.jamTotal = jamTotal;
+    this.KeteranganKehadiran = KeteranganKehadiran;
     }
 
-    public void setTanggalKehadiran(String tanggalKehadiran) {
-        this.tanggalKehadiran = tanggalKehadiran;
+    public String getEmail() {
+        return email;
+    }
+
+    public String getTanggalKehadiran() {
+        return tanggalKehadiran;
     }
 
     public String getJamMasuk() {
         return jamMasuk;
     }
 
-    public void setJamMasuk(String jamMasuk) {
-        this.jamMasuk = jamMasuk;
-    }
-
     public String getJamPulang() {
         return jamPulang;
-    }
-
-    public void setJamPulang(String jamPulang) {
-        this.jamPulang = jamPulang;
     }
 
     public String getJamTotal() {
         return jamTotal;
     }
 
-    public void setJamTotal(String jamTotal) {
-        this.jamTotal = jamTotal;
-    }
-
     public String getKeteranganKehadiran() {
         return KeteranganKehadiran;
-    }
-
-    public void setKeteranganKehadiran(String keteranganKehadiran) {
-        KeteranganKehadiran = keteranganKehadiran;
     }
 }

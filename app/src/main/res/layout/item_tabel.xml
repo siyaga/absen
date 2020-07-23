@@ -65,6 +65,18 @@
             android:textStyle="bold"
             android:textColor="@color/colorPrimary"
             />
+        <TextView
+            android:id="@+id/tv_email"
+            android:layout_marginLeft="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:text="Izin"
+            android:textSize="16dp"
+            android:layout_column="1"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            />
     </TableRow>
 
 </TableLayout>

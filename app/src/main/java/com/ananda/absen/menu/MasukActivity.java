@@ -59,23 +59,7 @@ public class MasukActivity extends AppCompatActivity {
         edtjamMasuk.setText(jamMasuk);
 
 
-        /* btnIsi.setOnClickListener(new View.OnClickListener() {
-            @Override
-        public void onClick(View v) {
-                SimpleDateFormat sdfTanggal = new SimpleDateFormat("yyyy.MM.dd");
-                final String tanggalMasuk = sdfTanggal.format(new Date());
-                edtTanggalMasuk.setText(tanggalMasuk);
-                SimpleDateFormat sdfHari = new SimpleDateFormat("EEEE", Locale.ENGLISH);
-                final String hariMasuk = sdfHari.format(new Date());
-                edtHariMasuk.setText(hariMasuk);
-                SimpleDateFormat sdfJam = new SimpleDateFormat("HH:mm");
-                final String jamMasuk = sdfJam.format(new Date());
-                edtjamMasuk.setText(jamMasuk);
-                btnMasuk.setVisibility(View.VISIBLE);
-                Toast.makeText(getApplicationContext(),"Anda Sudah Mengisi Absen",Toast.LENGTH_SHORT).show();
 
-            }
-        });  */
 
 
         btnMasuk.setOnClickListener(new View.OnClickListener() {

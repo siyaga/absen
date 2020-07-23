@@ -1,10 +1,12 @@
 package com.ananda.absen.menu;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,12 +16,22 @@ import android.widget.Toast;
 
 import com.ananda.absen.MainActivity;
 import com.ananda.absen.R;
+import com.ananda.absen.admin.AdminActivity;
+import com.ananda.absen.login.LoginActivity;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 import java.util.TimeZone;
 /*
 Deskripsi Pengerjaan    : Membuat Membuat Activity Absen Pulang
@@ -33,21 +45,15 @@ public class PulangActivity extends AppCompatActivity {
     private EditText edtTanggalPulang, edtHariPulang, edtJamPulang, edtTotalJam;
     private Spinner spinnerKeterangan;
     private Button btnPulang, btnIsiPulang;
-    private String tanggalMasuk;
-    private String hariMasuk;
-    private String jamMasuk;
+    String userId;
+    FirebaseAuth auth = FirebaseAuth.getInstance();
+    FirebaseFirestore fStore = FirebaseFirestore.getInstance();
 
     public static final String mypreference = "masuk";
     public static final String TanggalMasuk = "tanggalKey";
-    public static final String HariMasuk = "hariKey";
     public static final String JamMasuk  = "jamKey";
-
-    public static final String mypreferencePulang = "pulang";
-    public static final String TanggalPulang = "tanggalpulangKey";
-    public static final String HariPulang = "haripulangKey";
-    public static final String JamPulang  = "jampulangKey";
-    public static final String TotalJam  = "totaljamKey";
-    public static final String Keterangan  = "keteranganKey";
+    private String jmMasuk;
+    private String tmMasuk;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,8 +76,9 @@ public class PulangActivity extends AppCompatActivity {
         SimpleDateFormat sdfHari = new SimpleDateFormat("EEEE", Locale.ENGLISH);
         final String hariPulang = sdfHari.format(new Date());
         edtHariPulang.setText(hariPulang);
-        SharedPreferences sharedPreferences = getSharedPreferences(mypreference, MODE_PRIVATE);
-        final String jmMasuk = sharedPreferences.getString(JamMasuk, "jamKey");
+
+        SharedPreferences sharedPreferencesMulai = getSharedPreferences(mypreference, MODE_PRIVATE);
+        jmMasuk = sharedPreferencesMulai.getString(JamMasuk, "jamKey");
 
         btnIsiPulang.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,7 +105,7 @@ public class PulangActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 btnPulang.setVisibility(View.VISIBLE);
-                Toast.makeText(getApplicationContext(),"Anda Sudah Mengisi Absen",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Berhasil Menghitung",Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -108,6 +115,8 @@ public class PulangActivity extends AppCompatActivity {
                 SaveDataPulang();
                 Intent intent = new Intent(PulangActivity.this, MainActivity.class);
                 startActivity(intent);
+
+                Toast.makeText(getApplicationContext(),"Berhasil Melakukan Absen Pulang",Toast.LENGTH_SHORT).show();
                 finish();
             }
         });
@@ -122,19 +131,48 @@ public class PulangActivity extends AppCompatActivity {
         });
     }
     public void SaveDataPulang() {
-        SharedPreferences sharedpreferences = getSharedPreferences(mypreferencePulang, MODE_PRIVATE);
-        String tp = edtTanggalPulang.getText().toString();
-        String hp = edtHariPulang.getText().toString();
-        String jp = edtJamPulang.getText().toString();
-        String top = edtTotalJam.getText().toString();
-        String sp = spinnerKeterangan.getSelectedItem().toString();
-        SharedPreferences.Editor editor = sharedpreferences.edit();
-        editor.putString(TanggalPulang, tp);
-        editor.putString(HariPulang, hp);
-        editor.putString(JamPulang, jp);
-        editor.putString(TotalJam, top);
-        editor.putString(Keterangan, sp);
-        editor.apply();
+        userId = auth.getCurrentUser().getUid();
+        DocumentReference documentReference = fStore.collection("user").document(userId);
+
+        documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                SharedPreferences sharedPreferencesMulai = getSharedPreferences(mypreference, MODE_PRIVATE);
+                tmMasuk = sharedPreferencesMulai.getString(TanggalMasuk, "tanggalKey");
+                jmMasuk = sharedPreferencesMulai.getString(JamMasuk, "jamKey");
+                String jp = edtJamPulang.getText().toString();
+                String top = edtTotalJam.getText().toString();
+                String sp = spinnerKeterangan.getSelectedItem().toString();
+                String email = documentSnapshot.getString("email");
+                Map<String, Object> kehadiranPeruser = new HashMap<>();
+
+                kehadiranPeruser.put("email", email);
+                kehadiranPeruser.put("Tanggal", tmMasuk);
+                kehadiranPeruser.put("JamMasuk", jmMasuk);
+                kehadiranPeruser.put("JamPulang", jp);
+                kehadiranPeruser.put("TotalJam", top);
+                kehadiranPeruser.put("Keterangan", sp);
+
+                fStore.collection("Kehadiran").document(userId).set(kehadiranPeruser)
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Toast.makeText(PulangActivity.this, "Kehadiran Berhasil", Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(PulangActivity.this, "Error!", Toast.LENGTH_SHORT).show();
+                                Log.d("TAG", e.toString());
+
+                            }
+                        });
+
+            }
+
+        });
+
     }
 
 }

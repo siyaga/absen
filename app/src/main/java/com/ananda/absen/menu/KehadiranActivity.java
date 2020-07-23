@@ -6,13 +6,25 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ananda.absen.R;
+import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 
 import java.util.ArrayList;
+import java.util.List;
+
 /*
 Deskripsi Pengerjaan    : Membuat Membuat Activity Kehadiran
 NIM                     : Ananda Marwanaya Putra
@@ -23,47 +35,57 @@ Kelas                   : IF-4
 public class KehadiranActivity extends AppCompatActivity {
     private ImageView ivBack;
     private RecyclerView rvKehadiran;
-    private ArrayList<Kehadiran> list = new ArrayList<>();
+    private FirebaseFirestore fStore;
+    String userId;
+    private FirebaseAuth auth;
+    TextView tvTanggal, tvJamMasuk, tvJamPulang, tvTotalJam, tvKeterangan;
 
-    public static final String mypreference = "masuk";
-    public static final String TanggalMasuk = "tanggalKey";
-    public static final String HariMasuk = "hariKey";
-    public static final String JamMasuk  = "jamKey";
-
-    public static final String mypreferencePulang = "pulang";
-    public static final String TanggalPulang = "tanggalpulangKey";
-    public static final String HariPulang = "haripulangKey";
-    public static final String JamPulang  = "jampulangKey";
-    public static final String TotalJam  = "totaljamKey";
-    public static final String Keterangan  = "keteranganKey";
-
+    private KehadiranAdapterFire adapterFire;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kehadiran);
         ivBack = findViewById(R.id.iv_back);
-        rvKehadiran = findViewById(R.id.rvkehadiran);
-        rvKehadiran.setHasFixedSize(true);
+        auth = FirebaseAuth.getInstance();
+        fStore= FirebaseFirestore.getInstance();
+        ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
-        SharedPreferences sharedPreferencesMulai = getSharedPreferences(mypreference, MODE_PRIVATE);
-        SharedPreferences sharedPreferencesPulang = getSharedPreferences(mypreferencePulang, MODE_PRIVATE);
-        String tmMasuk = sharedPreferencesMulai.getString(TanggalMasuk, "tanggalKey");
-        String jmMasuk = sharedPreferencesMulai.getString(JamMasuk, "jamKey");
-        String jmPulang = sharedPreferencesPulang.getString(JamPulang, "jampulangKey");
-        String jamtotal = sharedPreferencesPulang.getString(TotalJam, "totaljamKey");
-        String keterangan = sharedPreferencesPulang.getString(Keterangan, "keteranganKey");
-
-
-          Kehadiran kehadiran = new Kehadiran();
-            kehadiran.setTanggalKehadiran(tmMasuk);
-            kehadiran.setJamMasuk(jmMasuk);
-            kehadiran.setJamPulang(jmPulang);
-            kehadiran.setJamTotal(jamtotal);
-            kehadiran.setKeteranganKehadiran(keterangan);
-            list.add(kehadiran);
+        tvTanggal = findViewById(R.id.tv_tanggal_absen);
+        tvJamMasuk = findViewById(R.id.tv_jam_masuk);
+        tvJamPulang = findViewById(R.id.tv_jam_pulang);
+        tvTotalJam = findViewById(R.id.tv_total_jam_absen);
+        tvKeterangan = findViewById(R.id.tv_keterangan);
 
 
-        showRecyclerList();
+        userId = auth.getCurrentUser().getUid();
+        final DocumentReference documentReference = fStore.collection("Kehadiran").document(userId);
+
+        documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                String tmMasuk = documentSnapshot.getString("Tanggal");
+                String jmMasuk = documentSnapshot.getString("JamMasuk");
+                String jmPulang = documentSnapshot.getString("JamPulang");
+                String jamtotal = documentSnapshot.getString("TotalJam");
+                String keterangan = documentSnapshot.getString("Keterangan");
+
+                tvTanggal.setText(tmMasuk);
+                tvJamMasuk.setText(jmMasuk);
+                tvJamPulang.setText(jmPulang);
+                tvTotalJam.setText(jamtotal);
+                tvKeterangan.setText(keterangan);
+
+
+
+            }
+            });
+
+
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,9 +93,6 @@ public class KehadiranActivity extends AppCompatActivity {
             }
         });
     }
-    private void showRecyclerList(){
-        rvKehadiran.setLayoutManager(new LinearLayoutManager(this));
-        KehadiranAdapter listKehadiranAdapter = new KehadiranAdapter(list);
-        rvKehadiran.setAdapter(listKehadiranAdapter);
-    }
+
+
 }

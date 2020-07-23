@@ -1,6 +1,5 @@
 package com.ananda.absen.login;
 
-import com.google.firebase.database.DatabaseReference;
 
 import java.util.prefs.Preferences;
 /*
@@ -11,21 +10,41 @@ Kelas                   : IF-4
 
  */
 public class User {
-
+    public String nama;
     public String email;
-    public String password;
+    public String userlevel;
 
 
 
-    public User(){
-
+    public String getEmail() {
+        return email;
     }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-    public User(String email, String password){
+    public String getNama() {
+        return nama;
+    }
+
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+
+    public String getUserlevel() {
+        return userlevel;
+    }
+
+    public void setUserlevel(String userlevel) {
+        this.userlevel = userlevel;
+    }
+
+    public User(String nama, String email, String userlevel){
 
         this.email = email;
-        this.password = password;
+        this.nama = nama;
+        this.userlevel = userlevel;
 
     }
 

@@ -37,8 +37,46 @@
             android:layout_height="wrap_content"
             />
     </LinearLayout>
-
-
+        <TextView
+            android:layout_marginTop="16dp"
+            android:text="Sebagai"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <Spinner
+            android:id="@+id/spinner_daftar"
+            android:padding="10dp"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/spinner"
+            android:entries="@array/user"
+            />
+        <TextView
+            android:layout_marginTop="16dp"
+            android:text="Nama Panjang"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <EditText
+            android:id="@+id/edt_nama_register"
+            android:hint="Email Anda"
+            android:inputType="textEmailAddress"
+            android:textColorHint="@color/colorAccent"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            />
         <TextView
             android:layout_marginTop="16dp"
             android:text="Email"

@@ -15,5 +15,9 @@
         <item>Ijin</item>
         <item>Sakit</item>
     </string-array>
+    <string-array name="user">
+        <item>User</item>
+        <item>Admin</item>
+    </string-array>
 
 </resources>

@@ -7,11 +7,11 @@ android {
 
     defaultConfig {
         applicationId "com.ananda.absen"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
-
+        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -33,8 +33,11 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:19.3.2'
     implementation "androidx.recyclerview:recyclerview:1.1.0"
     implementation "androidx.recyclerview:recyclerview-selection:1.1.0-rc01"
-
-
+    implementation 'com.google.android.gms:play-services-tasks:17.1.0'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.firebaseui:firebase-ui-auth:6.2.0'
+    implementation 'com.firebaseui:firebase-ui-firestore:6.2.0'
+    implementation 'com.google.firebase:firebase-firestore:21.5.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
