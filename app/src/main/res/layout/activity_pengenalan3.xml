@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
+    android:background="@drawable/backgroundlogin"
     tools:context=".intro.Pengenalan3Activity">
     <LinearLayout
         app:layout_constraintTop_toTopOf="parent"
@@ -14,6 +14,13 @@
         android:orientation="vertical"
         android:layout_marginLeft="24dp"
         android:layout_marginRight="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:background="@drawable/backgroundlinear_1"
+        android:padding="24dp"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
@@ -33,7 +40,7 @@
             android:text="@string/deskripsi_pengenalan_3"
 
             />
-
+    </LinearLayout>
         <Button
             android:id="@+id/btn_lanjut_3"
             android:layout_marginTop="48dp"

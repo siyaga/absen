@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
+    android:background="@drawable/backgroundregister"
     tools:context=".menu.MasukActivity">
     <ScrollView
         android:layout_width="match_parent"
@@ -38,12 +38,16 @@
                     />
             </LinearLayout>
 
-
+        <LinearLayout
+            android:background="@drawable/backgroundloginedt"
+            android:padding="24dp"
+            android:layout_marginTop="50dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
             <TextView
-                android:layout_marginTop="24dp"
                 android:text="Tanggal Masuk"
-                android:textColor="@color/colorPrimary"
-                android:textStyle="bold"
+                android:textColor="@color/colorBlack"
                 android:textSize="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -51,11 +55,11 @@
             <EditText
                 android:id="@+id/edt_tanggal_masuk"
                 android:inputType="date"
-                android:textColorHint="@color/colorAccent"
-                android:textColor="@color/colorPrimary"
+                android:padding="8dp"
+                android:background="@drawable/edt_background"
+                android:textColor="@color/colorBlack"
                 android:textStyle="bold"
                 android:layout_marginTop="8dp"
-                android:backgroundTint="@color/colorPrimary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
@@ -66,17 +70,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Hari"
-                android:textColor="@color/colorPrimary"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+                android:textColor="@color/colorBlack"
+                android:textSize="20dp" />
             <EditText
                 android:id="@+id/edt_hari_masuk"
                 android:inputType="date"
-                android:textColorHint="@color/colorAccent"
-                android:textColor="@color/colorPrimary"
+                android:padding="8dp"
+                android:background="@drawable/edt_background"
+                android:textColor="@color/colorBlack"
                 android:textStyle="bold"
                 android:layout_marginTop="8dp"
-                android:backgroundTint="@color/colorPrimary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
@@ -86,22 +89,21 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Jam Masuk"
-                android:textColor="@color/colorPrimary"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+                android:textColor="@color/colorBlack"
+                android:textSize="20dp" />
             <EditText
                 android:id="@+id/edt_Jam_masuk"
                 android:inputType="datetime"
-                android:textColorHint="@color/colorAccent"
-                android:textColor="@color/colorPrimary"
+                android:padding="8dp"
+                android:background="@drawable/edt_background"
+                android:textColor="@color/colorBlack"
                 android:textStyle="bold"
                 android:layout_marginTop="8dp"
-                android:backgroundTint="@color/colorPrimary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 />
-
+        </LinearLayout>
             <Button
                 android:id="@+id/btn_Absen_masuk"
                 android:layout_marginTop="48dp"
@@ -114,6 +116,7 @@
                 android:background="@drawable/button_1"
 
                 />
+
             <ProgressBar
                 android:id="@+id/progressBar"
                 android:layout_width="30dp"

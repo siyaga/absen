@@ -26,7 +26,7 @@ public class Pengenalan3Activity extends AppCompatActivity {
         btnLanjut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Pengenalan3Activity.this, LoginActivity.class);
+                Intent intent = new Intent(Pengenalan3Activity.this, SignUp.class);
                 startActivity(intent);
                 finish();
 

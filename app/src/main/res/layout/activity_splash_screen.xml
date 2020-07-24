@@ -4,15 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
+    android:background="@drawable/backgroundlogin"
     tools:context=".intro.SplashScreen">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:src="@drawable/logoab"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_centerVertical="true"
         android:layout_centerInParent="true"
+        app:civ_border_width="1dp"
+        app:civ_border_color="@color/colorBlue"
      />
 
 </RelativeLayout>

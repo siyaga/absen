@@ -9,6 +9,7 @@
     <string name="change_password">Change Password</string>
     <string name="send_password_reset_email">Send Password reset email</string>
     <string name="remove_user">Remove user</string>
+    <string name="deskripsi_signup">Dont Forget \nTo Be Absent</string>
     <string-array name="keterangan">
         <item>Hadir</item>
         <item>Lembur</item>
